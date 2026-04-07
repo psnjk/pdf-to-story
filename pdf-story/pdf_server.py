@@ -47,7 +47,11 @@ Your job:
 - If any element is missing a field, add a sensible placeholder
 - If the JSON is malformed, fix it
 - If an element has extra fields, remove them
-Return ONLY the corrected JSON array, no explanation, no markdown, no code blocks.
+
+Example of valid json structure:
+[{{"title": "Introduction to Neural Networks", "summary": "Neural networks are..."}}, {{"title": "Backpropagation", "summary": "Backpropagation is..."}}]
+
+Return ONLY one corrected JSON array that is valid, no explanation, no markdown formatting, no code blocks, no adaptations, no other JSONs.
 
 JSON to validate:
 {text}
@@ -60,7 +64,7 @@ def clean_json_response(raw):
     if raw.startswith("```"):
         raw = re.sub(r'^```[a-zA-Z]*\n?', '', raw)
         raw = re.sub(r'```$', '', raw)
-    return raw.strip()
+    return raw.strip().replace('\n', '')
 
 
 @app.route('/extract', methods=['POST'])
@@ -101,6 +105,7 @@ def call_ollama_text(prompt):
 
 @app.route('/generate', methods=['POST'])
 def generate():
+    validated = None
     try:
         text = request.json.get('text', '')
 
