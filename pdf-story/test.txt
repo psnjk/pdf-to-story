@@ -1,0 +1,117 @@
+CURRICULUM VITAE
+
+Dzhamil Mukhutdinov
+
+📍 Passau, Germany
+📧 kazan. jamil@gmail. com | ☎ +49 162 1691657
+💼 GitHub
+
+PROFILE
+
+Master’s student in AI Engineering with a strong background in Computer Science and
+
+Software Engineering. Extensive hands-on experience with Python, C/C++, Linux-based
+
+systems, containerization, and distributed software systems. Highly motivated to work on
+
+security-relevant, systems-oriented, and research-driven software projects, with a
+structured and independent working style.
+
+EDUCATION
+
+University of Passau — M. Sc. AI Engineering
+April 2024 – Present
+
+Focus areas: Machine Learning, Software Systems, Computer Vision, Data Engineering
+
+Selected projects:
+
+Implementation of a full machine learning library from scratch (sklearn-like
+architecture)
+
+LLM-based agentic systems: web applications with APIs, authentication, and
+
+content moderation
+
+Robotics project: autonomous vehicle using computer vision (YOLO, CNNs, PID
+
+control)
+
+Regular work in Linux environments (Ubuntu, Fedora), Docker, and Kubernetes
+(fundamentals)
+
+Innopolis University — B. Sc. Computer Science
+Minor: Software Engineering
+
+August 2018 – July 2022
+
+Bachelor thesis: Design of a Unified API for Code Generation — Grade A
+
+Strong focus on operating systems, distributed systems, networks, and software quality
+
+Multiple security- and networking-related courses completed during the program
+
+EXPERIENCE & PROJECT WORK
+
+Programming & Software Engineering Instructor (Freelance / Part-Time)
+
+Algorithmics International School | 2020 – 2024
+
+Mentored 150+ international students in programming, OOP, and software engineering
+
+Taught Python, Java, and web technologies with emphasis on clean, maintainable
+
+code
+
+Introduced Git workflows, modular design, debugging, and testing practices
+
+Covered fundamentals of APIs, data handling, and basic security concepts
+
+Software Development Intern
+
+LoudPlay | 2022
+
+Developed a Python-based prototype for quality assessment using system and
+
+network metrics
+
+Supported the transition of the prototype into a production-ready C++ module
+
+Worked in Linux environments with structured testing, refactoring, and performance
+analysis
+
+TECHNICAL SKILLS
+
+Programming Languages
+
+Python (advanced / expert)
+
+C++, C, C# (very good foundations)
+
+Java, JavaScript, TypeScript (practical experience)
+
+Systems & Infrastructure
+
+Linux (Ubuntu, Debian, Fedora), Bash
+
+Docker, Kubernetes (fundamentals and project usage)
+
+Raspberry Pi, embedded and edge computing setups
+
+Software Engineering Concepts
+
+Microservices, REST APIs, distributed systems
+
+Software quality, refactoring, testing, basic static analysis
+
+Networking fundamentals (TCP/IP, REST, security basics)
+
+LANGUAGES
+
+English: Fluent (C1)
+
+German: Intermediate (B2)
+
+Russian: Native
+
+
