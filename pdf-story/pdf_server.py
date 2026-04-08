@@ -56,7 +56,7 @@ Return ONLY one corrected JSON array that is valid, no explanation, no markdown 
 JSON to validate:
 {text}
 
-Validated JSON:"""
+Response containing validated JSON:"""
 
 
 def clean_json_response(raw):
@@ -119,7 +119,7 @@ def generate():
         return jsonify(parsed)
 
     except json.JSONDecodeError:
-        print("Failed to parse:", validated)
+        print("Failed to parse:", parsed, validated)
         return jsonify({'error': 'Model did not return valid JSON', 'raw': validated}), 500
     except Exception as e:
         import traceback
