@@ -56,7 +56,7 @@ Return ONLY one corrected JSON array that is valid, no explanation, no markdown 
 JSON to validate:
 {text}
 
-[{{"""
+Validated JSON:"""
 
 
 def clean_json_response(raw):
@@ -82,18 +82,7 @@ def extract():
         return jsonify({'error': str(e)}), 500
 
 
-def call_ollama_json(prompt):
-    response = requests.post(OLLAMA_URL, json={
-        "model": MODEL_NAME,
-        "stream": False,
-        "prompt": prompt
-    })
-    response.raise_for_status()
-    raw = response.json()["response"].strip()
-    return "[{" + raw  # reattach the primer
-
-
-def call_ollama_text(prompt):
+def call_ollama(prompt):
     response = requests.post(OLLAMA_URL, json={
         "model": MODEL_NAME,
         "stream": False,
@@ -103,23 +92,30 @@ def call_ollama_text(prompt):
     return response.json()["response"].strip()
 
 
+def call_ollama_json(prompt):
+    raw = call_ollama(prompt)
+    return "[{" + raw  # reattach the primer
+
+def call_ollama_validate(prompt):
+    raw = call_ollama(prompt)
+    return clean_json_response(raw)
+
 @app.route('/generate', methods=['POST'])
 def generate():
     validated = None
     try:
         text = request.json.get('text', '')
 
-        summary = call_ollama_text(AGENT1_PROMPT.format(text=text[:8000]))
+        summary = call_ollama(AGENT1_PROMPT.format(text=text[:8000]))
         print("Summary complete:", len(summary))
 
         raw_json = call_ollama_json(AGENT2_PROMPT.format(text=summary))
         print("JSON complete:", raw_json[:30] + '...')
 
-        validated = call_ollama_json(AGENT3_PROMPT.format(text=raw_json))
+        validated = call_ollama_validate(AGENT3_PROMPT.format(text=raw_json))
         print("Validation complete:", validated[:30] + '...')
 
-        cleaned = clean_json_response(validated)
-        parsed = json.loads(cleaned)
+        parsed = json.loads(validated)
         return jsonify(parsed)
 
     except json.JSONDecodeError:
