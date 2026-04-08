@@ -27,11 +27,13 @@ Converts a PDF into a sequential, readable story using a local LLM.
 
 ### Python server
 `pip install -r requirements.txt`
+
 `python pdf_server.py`
 
 ### Expo app
-npm install
-npx expo start
+`npm install`
+
+`npx expo start`
 
 Open in browser with `w`, or scan the QR code with Expo Go on your phone.
 
