@@ -35,7 +35,7 @@ export default function Story() {
                         >
                             <Text style={styles.title}>{item.title}</Text>
                             <Text style={styles.summary}>{item.summary}</Text>
-                            {isLocked && (
+                            {index === unlockedIndex + 1 && (
                                 <Text style={styles.tapToUnlock}>Tap to unlock</Text>
                             )}
                         </TouchableOpacity>
