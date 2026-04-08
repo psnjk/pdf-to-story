@@ -109,17 +109,14 @@ def generate():
     try:
         text = request.json.get('text', '')
 
-        print("--- Agent 1: Summarizing ---")
         summary = call_ollama_text(AGENT1_PROMPT.format(text=text[:8000]))
-        print("Summary length:", len(summary))
+        print("Summary complete:", len(summary))
 
-        print("--- Agent 2: Converting to JSON ---")
         raw_json = call_ollama_json(AGENT2_PROMPT.format(text=summary))
-        print("Raw JSON:", raw_json[:200])
+        print("JSON complete:", raw_json[:30] + '...')
 
-        print("--- Agent 3: Validating ---")
         validated = call_ollama_json(AGENT3_PROMPT.format(text=raw_json))
-        print("Validated:", validated[:200])
+        print("Validation complete:", validated[:30] + '...')
 
         cleaned = clean_json_response(validated)
         parsed = json.loads(cleaned)
